@@ -1,0 +1,5 @@
+db.collectionName.aggregate([
+  {$project: {
+   duration: {$divide: [{$subtract: ["$delivery_time.timestamp", "$send_time.timestamp"]},1000]}
+  }}
+])
